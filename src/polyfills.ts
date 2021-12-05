@@ -1,50 +1,46 @@
-/**
- * This file includes polyfills needed by Angular and is loaded before the app.
- * You can add your own extra polyfills to this file.
- *
- * This file is divided into 2 sections:
- *   1. Browser polyfills. These are applied before loading ZoneJS and are sorted by browsers.
- *   2. Application imports. Files imported after ZoneJS that should be loaded before your main
- *      file.
- *
- * The current setup is for so-called "evergreen" browsers; the last versions of browsers that
- * automatically update themselves. This includes recent versions of Safari, Chrome (including
- * Opera), Edge on the desktop, and iOS and Chrome on mobile.
- *
- * Learn more in https://angular.io/guide/browser-support
- */
+/** Этот файл включает полифиллы, необходимые для Angular, и загружается перед приложением.
+* Вы можете добавить в этот файл свои собственные дополнительные полифилы.
+*
+* Этот файл разделен на 2 раздела:
+  * 1. Полифиллы браузера. Они применяются перед загрузкой ZoneJS и сортируются браузерами.
+* 2. Импорт приложений. Файлы, импортированные после ZoneJS, которые должны быть загружены до вашего основного
+*      файл.
+*
+* Текущая настройка предназначена для так называемых «вечнозеленых» браузеров; последние версии браузеров, которые
+* автоматически обновляются. Сюда входят последние версии Safari, Chrome (включая
+  * Opera), Edge для настольных ПК и iOS и Chrome на мобильных устройствах.
+ * * Узнайте больше на https://angular.io/guide/browser-support
+ * /* БРАУЗЕР ПОЛИФИЛЛЫ
+ * /
 
-/***************************************************************************************************
- * BROWSER POLYFILLS
- */
+ / **
+ * По умолчанию zone.js исправляет все возможные macroTask и DomEvents.
+ * пользователь может отключить части патча macroTask / DomEvents, установив следующие флаги
+ * потому что эти флаги должны быть установлены до загрузки `zone.js` и webpack
+ * поместит импорт в верхнюю часть пакета, поэтому пользователю необходимо создать отдельный файл
+ * в этом каталоге (например: zone-flags.ts) и установите следующие флаги
+ * в этот файл, а затем добавьте следующий код перед импортом zone.js.
+ * импорт './zone-flags';
+ *
+ * Флаги, разрешенные в zone-flags.ts, перечислены здесь.
+ *
+ * Следующие флаги будут работать во всех браузерах.
+ *
+ * (окно как любое) .__ Zone_disable_requestAnimationFrame = true; // отключаем патч requestAnimationFrame
+ * (окно как любое) .__ Zone_disable_on_property = true; // отключаем патч onProperty, например onclick
+ * (окно как любое) .__ zone_symbol__UNPATCHED_EVENTS = ['scroll', 'mousemove']; // отключаем патч, указанный в eventNames
+ *
+ * в инструментах разработчика IE / Edge addEventListener также будет заключен в zone.js
+ * со следующим флагом он будет обходить патч zone.js для IE / Edge
+ *
+ * (окно как любое) .__ Zone_enable_cross_context_check = true;
+ *
+ * /
 
-/**
- * By default, zone.js will patch all possible macroTask and DomEvents
- * user can disable parts of macroTask/DomEvents patch by setting following flags
- * because those flags need to be set before `zone.js` being loaded, and webpack
- * will put import in the top of bundle, so user need to create a separate file
- * in this directory (for example: zone-flags.ts), and put the following flags
- * into that file, and then add the following code before importing zone.js.
- * import './zone-flags';
- *
- * The flags allowed in zone-flags.ts are listed here.
- *
- * The following flags will work for all browsers.
- *
- * (window as any).__Zone_disable_requestAnimationFrame = true; // disable patch requestAnimationFrame
- * (window as any).__Zone_disable_on_property = true; // disable patch onProperty such as onclick
- * (window as any).__zone_symbol__UNPATCHED_EVENTS = ['scroll', 'mousemove']; // disable patch specified eventNames
- *
- *  in IE/Edge developer tools, the addEventListener will also be wrapped by zone.js
- *  with the following flag, it will bypass `zone.js` patch for IE/Edge
- *
- *  (window as any).__Zone_enable_cross_context_check = true;
- *
- */
+ / ************************************************ *************************************************
+ * Zone JS требуется по умолчанию для самого Angular.
 
-/***************************************************************************************************
- * Zone JS is required by default for Angular itself.
- */
+*/
 import 'zone.js';  // Included with Angular CLI.
 
 
